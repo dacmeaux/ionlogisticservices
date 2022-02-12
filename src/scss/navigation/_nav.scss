@@ -1,0 +1,74 @@
+.navbar-brand {
+    padding-right: 3rem;
+}
+
+@at-root{
+
+}
+
+.navbar-expand-lg {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .navbar-nav {
+
+        .nav-link {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            color: $blue;
+            transition: color $transition-quick;
+
+            .nav-link-indicator, .nav-link-indicator &.active {
+                bottom: 0;
+                left: 1.5rem;
+                height: 0.5rem;
+                width: calc(100% - 3rem);
+                position: absolute;
+                background-color: $orange;
+                opacity: 0;
+                transition: opacity $transition-quick;
+            }
+
+            &.dropdown-toggle {
+                &::after {
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    border-width: 0.2rem 0.2rem 0 0;
+                    border-color: $black;
+                    border-style: solid;
+                    transform: rotate(135deg);
+                    transition: all $transition-quick;
+                }
+                
+            }
+
+            @include hover($orange) {
+                &.dropdown-toggle {
+                    &::after {
+                        border-color: $orange;
+                        transform: rotate(45deg);
+                        transition: all $transition-quick;
+                        
+                    }
+                }
+
+                .nav-link-indicator {
+                    opacity: 1;
+                    transition: opacity $transition-quick;
+                }
+            }
+
+            &.active {
+                color: $orange;
+
+                .nav-link-indicator {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

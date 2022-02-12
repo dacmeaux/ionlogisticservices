@@ -1,0 +1,30 @@
+$site-width: 128rem;
+
+/*
+ Fonts
+*/
+$default-font: 'PoppinsRegular';
+$light-font: 'PoppinsLight';
+$thin-font: 'PoppinsThin';
+$medium-font: 'PoppinsMedium';
+$bold-font: 'PoppinsBold';
+$web-font-path: '/wp-content/themes/ionlogisticservices/dist/static/fonts/';
+
+/*
+ Colors
+ */
+$orange: #ff8a00;
+$orange-lt: #f8a646;
+$blue: #0097e5;
+$blue-lt: #38b9fc;
+$gray: #5c5b5b;
+$gray-lt: #848484;
+$black: #000000;
+
+/*
+Time
+*/
+$transition-fast: 100ms;
+$transition-quick: 250ms;
+$transition-moderate: 500ms;
+$transition-slow: 1000ms;

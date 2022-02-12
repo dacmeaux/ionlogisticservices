@@ -1,0 +1,7 @@
+@mixin hover($color: inherit) {
+    &:hover {
+        color: $color;
+        transition: all $transition-quick;
+        @content;
+    }
+}

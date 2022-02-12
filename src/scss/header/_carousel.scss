@@ -1,0 +1,26 @@
+.carousel {
+
+    .carousel-inner {
+
+        .carousel-item {
+            min-height: 72rem;
+
+            background-position: left bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .carousel-caption {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: unset;
+
+
+            &.carousel-caption-left-top {
+                @include position('absolute', 2.5rem, 0, 0, 2.5rem, 100);
+            }
+        }
+        
+    }
+}

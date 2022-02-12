@@ -1,0 +1,38 @@
+@mixin position($position: absolute, $top: null, $right: null, $bottom: null, $left: null, $z-index: initial) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+  // breakpoint var (first in array is the largest number, etc array.length)
+$z-indexes: (
+    "modal",
+    "sidebar",
+    “header”
+  );
+   
+  @function z-index($name) {
+    @if index($z-indexes, $name) {
+      @return (length($z-indexes) - index($z-indexes, $name))+1;
+    }
+    @else {
+      @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+      @return null;
+    }
+}
+
+@mixin ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
